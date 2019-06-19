@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     grid-template-rows: repeat(3, max-content);
-    grid-template-columns: max-content repeat(2, 1fr);
+    grid-template-columns: max-content repeat(2, minmax(max-content,1fr));
     grid-gap: 2rem;
     grid-row-gap: 5rem;
     width: 30vw;

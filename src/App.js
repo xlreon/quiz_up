@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { LoginForm } from './Components'
+import { LoginForm, WelcomeCard } from './Components'
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
         <h2>Quiz Up</h2>
       </div>
       <div className="main">
-        <LoginForm/>
+        {/* <LoginForm/> */}
+        <WelcomeCard/>
       </div>
     </div>
   );

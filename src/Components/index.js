@@ -1,5 +1,7 @@
 import LoginForm from './LoginForm';
+import WelcomeCard from './WelcomeCard';
 
 export {
-    LoginForm
+    LoginForm,
+    WelcomeCard
 }
