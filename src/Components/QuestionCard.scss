@@ -12,7 +12,8 @@
     align-items: center;
     justify-items: center;
     color: whitesmoke;
-
+    transform-style: preserve-3d;
+    transition: all 0.8s linear;
     &-header {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -102,6 +103,7 @@
         background:rgba(red, 0.7);
         box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem rgba(205, 33, 33, 0.2);
     }
+    
 }
 
 .incorrect {

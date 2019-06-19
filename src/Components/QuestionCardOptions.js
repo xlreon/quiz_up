@@ -5,7 +5,8 @@ import { updateQuestionNumber } from '../actions';
 class QuestionCardOptions extends React.Component {
 
     handleOptionClick = () => {
-        const { updateQuestionNumber } = this.props
+        const { updateQuestionNumber, setFlipCard } = this.props
+        setFlipCard(true)
         updateQuestionNumber()
     }
 
@@ -42,7 +43,7 @@ class QuestionCardOptions extends React.Component {
 
     render() {
         return (
-            <div className="question-card-options">
+            <div className={"question-card-options"}>
                 {this.getOptions()}
             </div>
         );
