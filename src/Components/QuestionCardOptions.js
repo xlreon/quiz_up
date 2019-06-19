@@ -1,12 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateQuestionNumber } from '../actions';
+import { updateQuestionNumber, updateSelectedAnswer } from '../actions';
 
 class QuestionCardOptions extends React.Component {
 
-    handleOptionClick = () => {
-        const { updateQuestionNumber } = this.props
-        updateQuestionNumber()
+    handleOptionClick = (index) => {
+        const { updateQuestionNumber, setHighlight, updateSelectedAnswer } = this.props
+            setTimeout(() => {
+                updateQuestionNumber()
+                setHighlight(false)
+            }, 1500) 
+            setHighlight(true)
+            updateSelectedAnswer(index)
     }
 
     getOptions = () => {
@@ -21,10 +26,10 @@ class QuestionCardOptions extends React.Component {
         }
         else {
             return options 
-                    ? options.map( option => 
+                    ? options.map( (option, index) => 
                         <div
                             className="question-card-option"
-                            onClick={this.handleOptionClick}
+                            onClick={() => this.handleOptionClick(index)}
                             >
                             {option}
                         </div>
@@ -42,11 +47,11 @@ class QuestionCardOptions extends React.Component {
 
     render() {
         return (
-            <div className="question-card-options">
+            <div className={"question-card-options"}>
                 {this.getOptions()}
             </div>
         );
     }
 }
 
-export default connect(null, {updateQuestionNumber})(QuestionCardOptions);
+export default connect(null, {updateQuestionNumber, updateSelectedAnswer})(QuestionCardOptions);

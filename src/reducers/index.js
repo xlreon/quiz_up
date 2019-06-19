@@ -9,9 +9,10 @@ function reducer(state = initialState, action) {
             return { ...state, current_question_number: isValidQuestion ? state.current_question_number + 1 : state.current_question_number - 1}
         case AppActions.UPDATE_CURRENT_TIME:
             const isValidTime = state.test_time > state.current_time
-            console.log(state.current_time);
             return isValidTime ? { ...state, current_time:  state.current_time + 1} : state
-        default:
+        case AppActions.UPDATE_SELECTED_ANSWER:
+                return { ...state, selected_answer: payload }
+            default:
         return state;
     }
 }
