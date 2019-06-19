@@ -1,21 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class QuestionCardHeader extends React.Component {
+    
     render() {
+
+        const { currentQuestionIndex, totalQuestions, timeLeft } = this.props
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft - minutes * 60;
         return (
             <div className="question-card-header">
                 <span>
-                    1 / 2
+                    {currentQuestionIndex} / { totalQuestions }
                 </span>
                 <span>
-                    Question No. 1
+                    Question No. { currentQuestionIndex }
                 </span>
                 <span className="question-card-timer">
-                    Timer
+                    {`${minutes} min ${seconds} s`}
                 </span>
             </div>
         );
     }
 }
 
-export default QuestionCardHeader;
+const mapStateToProps = state => {
+    return {
+        timeLeft: state.test_time - state.current_time
+    }
+}
+
+export default connect(mapStateToProps)(QuestionCardHeader);
