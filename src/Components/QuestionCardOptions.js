@@ -9,7 +9,7 @@ class QuestionCardOptions extends React.Component {
             setTimeout(() => {
                 updateQuestionNumber()
                 setHighlight(false)
-            }, 1800) 
+            }, 1500) 
             setHighlight(true)
             updateSelectedAnswer(index)
     }

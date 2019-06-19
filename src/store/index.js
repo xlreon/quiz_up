@@ -6,14 +6,14 @@ const initialState = {
     question_and_answers: [
             {
                 id: 1,
-                question: "What is your name ?",
-                options: ["Anil", "Sunil", "Ramesh", "Suresh"],
-                correct_answer: 0
+                question: "What is the HTML tag under which one can write the JavaScript code?",
+                options: [" <javascript>", "<scripted>", "<script>", "<js>"],
+                correct_answer: 2
             },
             {
                 id: 2,
-                question: "What is your age ?",
-                options: ["14", "24", "36", "47"],
+                question: "Which of the following is not a reserved word in JavaScript ?",
+                options: ["interface", "program", "throws", "short"],
                 correct_answer: 1
             }
         ],
