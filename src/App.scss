@@ -6,11 +6,11 @@
     height: 98vh;
     padding: 3rem;
     box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
-    justify-content: center;
     z-index: 1;
+    justify-content: center;
     grid-template-rows: max-content 1fr;
-    grid-template-columns: minmax(max-content, 1fr);
-    grid-gap: 3rem;
+    grid-template-columns: minmax(max-content, 50vw);
+    grid-gap: 5rem;
 }
 
 .header {
@@ -22,5 +22,8 @@
 
 
 .main {
-    background-color: blueviolet;
+    display: grid;
+    align-self: center;
+    align-content: start;
+    justify-content: center;
 }
