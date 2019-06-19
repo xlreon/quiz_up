@@ -14,7 +14,15 @@ class QuestionCard extends React.Component {
     }
 
     getContent = () => {
-        const { highlight, selectedAnswer } = this.props
+        const { 
+            highlight,
+            selectedAnswer,
+            question,
+            options,
+            correctAnswer,
+            currentQuestionIndex,
+            totalQuestions
+        } = this.props
 
         if(highlight) {
             const cardClassName = selectedAnswer ? this.getCorrectClassName() : 'question-card'
@@ -23,24 +31,28 @@ class QuestionCard extends React.Component {
             return <div className={cardClassName}>
                         <img src={imageSource} className={imageClassName}/>
                         <span className="question-card-current">
-                            Dummy Question ?
+                            {question}
                         </span>
                         <QuestionCardOptions
                             highlight={true}
-                            options={["A","B","C","D"]}
-                            correctAnswer={"A"}
+                            options={options}
+                            correctAnswer={correctAnswer}
                         />
                     </div>
         }
         else {
             return <div className="question-card">
-                        <QuestionCardHeader/>
+                        <QuestionCardHeader
+                            currentQuestionIndex={currentQuestionIndex}
+                            totalQuestions={totalQuestions}
+                            // timer={}
+                        />
                         <span className="question-card-current">
-                            Dummy Question ?
+                            {question}
                         </span>
                         <QuestionCardOptions
                             highlight={false}
-                            options={["A","B","C","D"]}
+                            options={options}
                             correctAnswer={"A"}
                         />
                     </div>

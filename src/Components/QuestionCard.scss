@@ -65,6 +65,7 @@
         &:hover {
             background:blueviolet;
             transform: translateY(-0.1rem);
+            cursor: pointer;
         }
         &__correct {
             background: greenyellow;
