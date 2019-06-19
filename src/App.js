@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.scss';
 import { LoginForm, WelcomeCard, QuestionCard } from './Components'
+import { HeaderLogo } from './assets'
 
 function App() {
   return (
     <div className="container">
-      <div className="header">
-        <h2>Quiz Up</h2>
-      </div>
+      <img className="header" src={HeaderLogo}/>
       <div className="main">
         {/* <LoginForm/> */}
         {/* <WelcomeCard/> */}
-        <QuestionCard highlight={true} selectedAnswer={"A"} correctAnswer={"A"}/>
+        <QuestionCard highlight={false} selectedAnswer={"A"} correctAnswer={"A"}/>
       </div>
     </div>
   );
