@@ -1,0 +1,48 @@
+.question-card {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2rem;
+    height: max-content;
+    padding: 3.5rem;
+    box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+    background-image:  linear-gradient(to right bottom, rgba(252, 252, 252, 0.8), rgba(226, 226, 226, 0.8));
+    border-radius: 10%;
+    align-items: center;
+    justify-items: center;
+
+    &-header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+        font-size: 2rem;
+    }
+
+    &-current {
+        font-size: 5rem;
+    }
+    &-timer {
+        text-align: end;
+    }
+    &-options {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        font-size: 2rem;
+    }
+
+    &-option {
+        width: 20rem;
+        padding: 1rem;
+        text-align: center;
+        background: rgba(palegoldenrod, 0.7);
+        border-radius: 10%;
+        transition: 0.5ms all;
+        &:hover {
+            background: rgba(palegoldenrod, 1.0);
+            transform: translateY(-0.1rem);
+        }
+    }
+
+}
