@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { LoginForm, WelcomeCard } from './Components'
+import { LoginForm, WelcomeCard, QuestionCard } from './Components'
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
       </div>
       <div className="main">
         {/* <LoginForm/> */}
-        <WelcomeCard/>
+        {/* <WelcomeCard/> */}
+        <QuestionCard/>
       </div>
     </div>
   );
