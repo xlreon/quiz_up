@@ -11,7 +11,7 @@ function App() {
       <div className="main">
         {/* <LoginForm/> */}
         {/* <WelcomeCard/> */}
-        <QuestionCard/>
+        <QuestionCard highlight={true} selectedAnswer={"A"} correctAnswer={"A"}/>
       </div>
     </div>
   );
