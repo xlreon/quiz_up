@@ -3,28 +3,29 @@ import "./QuestionCard.scss";
 import QuestionCardOptions from './QuestionCardOptions';
 import QuestionCardHeader from './QuestionCardHeader';
 import { CorrectIcon, InCorrectIcon } from '../assets';
+import { connect } from 'react-redux';
 
 class QuestionCard extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            flipCard: false
+            highlight: false
         }
     }
 
-    setFlipCard = (flipCard) => this.setState({flipCard})
+    setHighlight = (highlight) => this.setState({highlight})
 
     getCorrectClassName = () => this.checkIfCorrect() ? 'question-card correct' : 'question-card incorrect'
 
     checkIfCorrect = () => {
-        const { correctAnswer, selectedAnswer } = this.props
+        const { correctAnswer, selectedAnswerIndex, options } = this.props
+        const selectedAnswer = options[selectedAnswerIndex]
         return correctAnswer === selectedAnswer
     }
 
     getContent = () => {
         const { 
-            highlight,
             selectedAnswer,
             question,
             options,
@@ -32,8 +33,8 @@ class QuestionCard extends React.Component {
             currentQuestionIndex,
             totalQuestions
         } = this.props
-        const { flipCard } = this.state
-        const style = flipCard ? {
+        const { highlight } = this.state
+        const style = !highlight ? {
             transform: 'rotateY(360deg)'
         } : {}
         if(highlight) {
@@ -46,10 +47,10 @@ class QuestionCard extends React.Component {
                             {question}
                         </span>
                         <QuestionCardOptions
-                            highlight={true}
+                            highlight={highlight}
                             options={options}
                             correctAnswer={correctAnswer}
-                            setFlipCard={this.setFlipCard}
+                            setHighlight={this.setHighlight}
                         />
                     </div>
         }
@@ -63,19 +64,13 @@ class QuestionCard extends React.Component {
                             {question}
                         </span>
                         <QuestionCardOptions
-                            highlight={false}
+                            highlight={highlight}
                             options={options}
                             correctAnswer={"A"}
-                            setFlipCard={this.setFlipCard}
+                            setHighlight={this.setHighlight}
                         />
                     </div>
         }
-    }
-
-    shouldComponentUpdate = () => {
-        const { flipCard } = this.state
-        flipCard && this.setFlipCard(false)
-        return true
     }
 
     render() {
@@ -85,4 +80,10 @@ class QuestionCard extends React.Component {
     }
 }
 
-export default QuestionCard
+const mapStateToProps = state => {
+    return {
+        selectedAnswerIndex: state.selected_answer
+    }
+}
+
+export default connect(mapStateToProps)(QuestionCard);
