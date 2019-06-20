@@ -23,7 +23,8 @@ const initialState = {
         quiz_start: null,
         quiz_end: null,
         current_question_number: 1,
-        selected_answer: null
+        selected_answer: null,
+        selected_answers: []
 };
 
 let store = createStore(reducers, applyMiddleware(thunk));

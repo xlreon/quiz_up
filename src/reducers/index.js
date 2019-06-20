@@ -11,7 +11,7 @@ function reducer(state = initialState, action) {
             const isValidTime = state.test_time > state.current_time
             return isValidTime ? { ...state, current_time:  state.current_time + 1} : state
         case AppActions.UPDATE_SELECTED_ANSWER:
-                return { ...state, selected_answer: payload }
+                return { ...state, selected_answer: payload, selected_answers: state.selected_answers.push(payload) }
             default:
         return state;
     }

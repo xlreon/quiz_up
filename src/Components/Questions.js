@@ -32,7 +32,6 @@ class Questions extends React.Component {
         const correctAnswer = currentQuestion.options[correctAnswerIndex]
         return (
             <QuestionCard
-                highlight={false}
                 selectedAnswer={selectedAnswer}
                 correctAnswer={correctAnswer}
                 currentQuestionIndex={currentQuestionIndex}

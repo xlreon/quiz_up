@@ -50,7 +50,7 @@ class QuestionCard extends React.Component {
                             highlight={highlight}
                             options={options}
                             correctAnswer={correctAnswer}
-                            setHighlight={this.setHighlight}
+                            // setHighlight={this.setHighlight}
                         />
                     </div>
         }
