@@ -12,9 +12,9 @@ class LoginForm extends React.Component {
         return (
             <div className="login-form">
                 <img className="icon" src={UserIcon}/>
-                <input className="form-input"/>
+                <input className="form-input" placeholder="Username"/>
                 <img className="icon" src={PasswordIcon} />
-                <input className="form-input" type="password"/>
+                <input className="form-input" type="password" placeholder="Password"/>
                 <button className="btn">
                     LOGIN
                 </button>

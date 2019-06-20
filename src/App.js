@@ -11,10 +11,10 @@ function App() {
       <div className="container">
         <img className="header" src={HeaderLogo}/>
         <div className="main">
-          {/* <LoginForm/> */}
+          <LoginForm/>
           {/* <WelcomeCard/> */}
           {/* <Questions /> */}
-          <ResultsCard/>
+          {/* <ResultsCard/> */}
         </div>
       </div>
     </Provider>
