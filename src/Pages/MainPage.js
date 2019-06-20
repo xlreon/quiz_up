@@ -1,6 +1,7 @@
 import React from 'react';
 import { LoginForm, Questions, ResultsCard, WelcomeCard } from '../Components';
 import { connect } from 'react-redux';
+import { HeaderLogo } from '../assets'
 
 class MainPage extends React.Component {
 
@@ -22,10 +23,17 @@ class MainPage extends React.Component {
         }
     }
     render() {
+        const { quizEnd } = this.props
+        const containerStyle = quizEnd ? { height: 'max-content' } : { height: '95vh' }
         return (
-            <div className="main">
-                {this.getCurrentContent()}
+            <div className="container" style={containerStyle}>
+                <img className="header" src={HeaderLogo}/>
+                <div className="main">
+                    {this.getCurrentContent()}
+                    {/* <ResultsCard/> */}
+                </div>
             </div>
+
         );
     }
 }
