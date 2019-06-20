@@ -27,7 +27,7 @@ class WelcomeCard extends React.Component {
     }
 
     render() {
-        const { userName, startQuiz } = this.props
+        const { userName, startQuiz, questions } = this.props
         const { countDownTime } = this.state
         countDownTime === 0 && startQuiz()
         return (
@@ -35,9 +35,19 @@ class WelcomeCard extends React.Component {
                 <span className="card-title">
                     Welcome {userName ? userName : "Sidharth"}<br/>
                 </span>
+                <span className="text">
+                    Your Quiz starts in 
+                </span>
                 <span className="timer">
                     {countDownTime}
                 </span>
+                <span className="text">
+                    Total Questions
+                </span>
+                <span className="timer">
+                    {questions.length}
+                </span>
+                
             </div>
         );
     }
@@ -45,7 +55,8 @@ class WelcomeCard extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        userName: state.username
+        userName: state.username,
+        questions: state.question_and_answers
     }
 }
 

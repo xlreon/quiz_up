@@ -58,7 +58,9 @@
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
+        width: 100%;
         font-size: 2rem;
+        padding: 1rem;
     }
 
     &-highlight {
@@ -76,11 +78,10 @@
     }
 
     &-option {
-        width: 20rem;
+        width: 100%;
         padding: 1rem;
         text-align: center;
         background: rgba(blueviolet, 0.8);
-        border-radius: 10%;
         transition: 0.5ms all;
         &:hover {
             background:blueviolet;
@@ -89,23 +90,18 @@
         }
         &__correct {
             background: green;
-            width: 20rem;
             padding: 1rem;
             text-align: center;
-            border-radius: 10%;
             transition: 0.5ms all;
         }
         &__incorrect {
-            width: 20rem;
             padding: 1rem;
             text-align: center;
-            border-radius: 10%;
             transition: 0.5ms all;
             background: red;
         }
 
         &__selected {
-            width: 20rem;
             padding: 1rem;
             text-align: center;
             border-radius: 10%;

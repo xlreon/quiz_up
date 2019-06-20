@@ -21,8 +21,8 @@ class LoginForm extends React.Component {
 
     handleClick = () => {
         const { logIn } = this.props
-        const { userName } = this.state
-        logIn(userName)
+        const { userName, password } = this.state
+        logIn(userName, password)
     }
 
     render () {

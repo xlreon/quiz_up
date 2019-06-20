@@ -13,7 +13,7 @@ const updateCurrentTime = () => dispatch => dispatch({type: AppActions.UPDATE_CU
 
 const updateSelectedAnswer = selectionIndex => dispatch => dispatch({type: AppActions.UPDATE_SELECTED_ANSWER, payload: selectionIndex})
 
-const logIn = userName => dispatch => userName && dispatch({type: AppActions.LOG_IN, payload: userName})
+const logIn = (userName, password) => dispatch => userName && password && dispatch({type: AppActions.LOG_IN, payload: userName})
 
 const startQuiz = () => dispatch => dispatch({type: AppActions.START_QUIZ})
 
