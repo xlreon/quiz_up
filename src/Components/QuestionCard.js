@@ -38,7 +38,7 @@ class QuestionCard extends React.Component {
         } = this.props
         const { highlight } = this.state
         const style = !highlight ? {
-            transform: 'rotateY(360deg)'
+            // animation: "fade 1s linear"
         } : {}
 
         if(currentTime === 0 || currentQuestionIndex > question.length - 1) {
