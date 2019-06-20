@@ -1,11 +1,15 @@
 import React from 'react';
 import { UserIcon, PasswordIcon } from '../assets';
 import "./LoginForm.scss";
+import { connect } from 'react-redux';
+import { logIn } from '../actions';
 
 
 class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
+
+    handleClick = () => {
+        const { logIn } = this.props
+        logIn()
     }
 
     render () {
@@ -15,7 +19,7 @@ class LoginForm extends React.Component {
                 <input className="form-input" placeholder="Username"/>
                 <img className="icon" src={PasswordIcon} />
                 <input className="form-input" type="password" placeholder="Password"/>
-                <button className="btn">
+                <button className="btn" onClick={this.handleClick}>
                     LOGIN
                 </button>
             </div>
@@ -23,4 +27,6 @@ class LoginForm extends React.Component {
     }
 }
 
-export default LoginForm
+export default connect(null, {
+    logIn
+})(LoginForm);
