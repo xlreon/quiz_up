@@ -43,6 +43,12 @@ class WelcomeCard extends React.Component {
     }
 }
 
-export default connect(null, {
+const mapStateToProps = state => {
+    return {
+        userName: state.username
+    }
+}
+
+export default connect(mapStateToProps, {
     startQuiz
 })(WelcomeCard);
