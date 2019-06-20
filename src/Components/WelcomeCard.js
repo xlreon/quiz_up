@@ -8,7 +8,7 @@ class WelcomeCard extends React.Component {
     constructor() {
         super();
         this.state = {
-            countDownTime: 5,
+            countDownTime: 1,
             countDownTimer: null
         }
     }

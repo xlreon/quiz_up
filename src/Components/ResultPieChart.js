@@ -7,7 +7,7 @@ class ResultPieChart extends React.Component {
     render () {
         const { data } = this.props
         return (
-            <PieChart width={200} height={200}>
+            <PieChart width={300} height={300}>
                 <Pie
                 data={data} 
                 >

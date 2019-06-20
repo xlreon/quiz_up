@@ -23,8 +23,8 @@ class ResultsCard extends React.Component {
         }
         else {
             return {
-                correctAnswers: 4,
-                inCorrectAnswers: 6
+                correctAnswers: 0,
+                inCorrectAnswers: questions.length
             }
         }
 
@@ -32,6 +32,7 @@ class ResultsCard extends React.Component {
     
     render() {
         const { correctAnswers, inCorrectAnswers } = this.findCorrectAndWrongAnswers()
+        const { selectedAnswers } = this.props
         const data = [{
             name: "Correct",
             value: correctAnswers
@@ -46,10 +47,9 @@ class ResultsCard extends React.Component {
                 <span className="result-container-title">Results</span>
                 <div className="result-container-graphs">
                     <ResultPieChart data={data}/>
-                    <ResultPieChart data={data}/>
                 </div>
                 <span className="result-container-title">Answers</span>
-                <AnswerList questions={this.props.questions}/>
+                <AnswerList questions={this.props.questions} selectedAnswers={selectedAnswers}/>
             </div>
         );
     }

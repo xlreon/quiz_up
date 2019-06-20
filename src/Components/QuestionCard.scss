@@ -4,7 +4,7 @@
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 2rem;
     height: max-content;
-    padding: 3.5rem;
+    padding: 1.5rem;
     box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
     background-image:  linear-gradient(to right bottom, rgba(16, 16, 16, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.fineartamerica.com/images-medium-large-5/abstract-metal-background-carbon-fiber-texture-bgblue.jpg');
     background-size: cover;
@@ -14,6 +14,7 @@
     color: whitesmoke;
     transform-style: preserve-3d;
     transition: all 0.8s linear;
+    
     &-header {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -27,11 +28,23 @@
         background: rgba(palegreen, 0.5);
         width: 100%;
     }
-
-    &-list {
+    &-list__green {
         padding: 4rem;
         border-radius: 3%;
-        background-image:  linear-gradient(to right bottom, rgba(255, 170, 170, 0.3), rgba(249, 245, 245, 0.3));
+        display: grid;
+        grid-gap: 5rem;
+        background: rgba(greenyellow, 0.2);
+        padding: 5rem;
+        border-radius: 1%;
+    }
+    &-list__red {
+        padding: 4rem;
+        border-radius: 3%;
+        display: grid;
+        grid-gap: 5rem;
+        background: rgba(palevioletred, 0.5);
+        padding: 5rem;
+        border-radius: 1%;
     }
 
     &-current {
@@ -89,6 +102,15 @@
             border-radius: 10%;
             transition: 0.5ms all;
             background: red;
+        }
+
+        &__selected {
+            width: 20rem;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 10%;
+            transition: 0.5ms all;
+            background: orange;
         }
     }
 
