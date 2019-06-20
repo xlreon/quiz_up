@@ -4,18 +4,22 @@ import QuestionCardOptions from './QuestionCardOptions';
 class AnswerList extends React.Component {
 
     getAnswersList = () => {
-        const { questions } = this.props
+        const { questions, selectedAnswers } = this.props
         const answerList = []
-        questions.map(question => {
+        questions.map((question, index) => {
+                    const correctAnswer = question.options[question.correct_answer]
+                    const selectedAnswer = question.options[selectedAnswers[index]]
+                    const listClassName = correctAnswer === selectedAnswer ? "question-card-list__green" : "question-card-list__red"
                     answerList.push(
-                    <div  className={"question-card-list"}>
+                    <div className={listClassName}>
                         <span className="question-card-current">
                             {question.question}
                         </span>
                         <QuestionCardOptions
                             highlight={true}
                             options={question.options}
-                            correctAnswer={question.options[question.correct_answer]}
+                            correctAnswer={correctAnswer}
+                            currentQuestionIndex={index}
                         />
                     </div>
                     )}

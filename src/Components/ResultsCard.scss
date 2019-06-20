@@ -19,8 +19,11 @@
     &-graphs {
         display: grid;
         justify-content: center;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-gap: 2rem;
+        grid-column: 1 / -1;
+        justify-items: center;
+        align-self: center;
     }
 
     &-answers {

@@ -18,7 +18,7 @@ const initialState = {
             }
         ],
         username: "",
-        test_time: 10,
+        test_time: 180,
         current_time: 0,
         logged_in: false,
         quiz_start: null,

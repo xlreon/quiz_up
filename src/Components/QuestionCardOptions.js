@@ -40,9 +40,17 @@ class QuestionCardOptions extends React.Component {
     }
 
     getClassName = (correctAnswer, option) => {
+        const { selectedAnswers, currentQuestionIndex, quizEnd, options } = this.props
+        const selectedAnswerIndex = selectedAnswers[currentQuestionIndex]
+        // const correctAnswerIndex = options.indexOf(correctAnswer)
+        const selectedAnswer = options[selectedAnswerIndex]
         return correctAnswer === option
                 ? "question-card-option__correct"
-                : "question-card-option__incorrect"
+                : quizEnd 
+                    ? selectedAnswer === option
+                        ? "question-card-option__selected"
+                        :  "question-card-option__incorrect" 
+                    : "question-card-option__incorrect" 
     }
 
     render() {
@@ -54,4 +62,11 @@ class QuestionCardOptions extends React.Component {
     }
 }
 
-export default connect(null, {updateQuestionNumber, updateSelectedAnswer})(QuestionCardOptions);
+const mapStateToProps = state => {
+    return {
+        selectedAnswers: state.selected_answers,
+        quizEnd: state.quiz_end
+    }
+}
+
+export default connect(mapStateToProps, {updateQuestionNumber, updateSelectedAnswer})(QuestionCardOptions);
