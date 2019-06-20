@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { LoginForm, WelcomeCard, Questions } from './Components'
+import { LoginForm, WelcomeCard, Questions, ResultsCard } from './Components'
 import { HeaderLogo } from './assets'
 import { Provider } from "react-redux";
 import { store } from "./store";
@@ -13,7 +13,8 @@ function App() {
         <div className="main">
           {/* <LoginForm/> */}
           {/* <WelcomeCard/> */}
-          <Questions />
+          {/* <Questions /> */}
+          <ResultsCard/>
         </div>
       </div>
     </Provider>
