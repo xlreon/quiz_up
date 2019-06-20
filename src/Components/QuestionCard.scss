@@ -16,7 +16,7 @@
     color: whitesmoke;
     transform-style: preserve-3d;
     transition: all 0.8s linear;
-    
+    animation: fadeIn 1s ease-in;
     &-header {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -146,8 +146,24 @@
 
 .incorrect {
     background-image: linear-gradient(to right bottom, rgba(254, 97, 149, 0.8), rgba(237, 119, 158, 0.515)), url('https://images.fineartamerica.com/images-medium-large-5/abstract-metal-background-carbon-fiber-texture-bgblue.jpg');
+    animation: fadeOut 2s ease-out;
 }
 
 .correct {
     background-image: linear-gradient(to right bottom, rgba(152, 249, 133, 0.8), rgba(221, 249, 207, 0.515)), url('https://images.fineartamerica.com/images-medium-large-5/abstract-metal-background-carbon-fiber-texture-bgblue.jpg');
+    animation: fadeOut 2s ease-out;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1 }
+    50% { opacity: 1 }
+    75% { opacity: 0.25 }
+    100% { opacity: 0 }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0 }
+    50% { opacity: 0.25 }
+    75% { opacity: 1 }
+    100% { opacity: 1 }
 }
