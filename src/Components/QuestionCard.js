@@ -4,6 +4,7 @@ import QuestionCardOptions from './QuestionCardOptions';
 import QuestionCardHeader from './QuestionCardHeader';
 import { CorrectIcon, InCorrectIcon } from '../assets';
 import { connect } from 'react-redux';
+import { endQuiz } from '../actions';
 
 class QuestionCard extends React.Component {
 
@@ -31,12 +32,19 @@ class QuestionCard extends React.Component {
             options,
             correctAnswer,
             currentQuestionIndex,
-            totalQuestions
+            totalQuestions,
+            currentTime,
+            endQuiz
         } = this.props
         const { highlight } = this.state
         const style = !highlight ? {
             transform: 'rotateY(360deg)'
         } : {}
+
+        if(currentTime === 0 || currentQuestionIndex > question.length - 1) {
+            endQuiz()
+        }
+
         if(highlight) {
             const cardClassName = selectedAnswer ? this.getCorrectClassName() : 'question-card'
             const imageSource = this.checkIfCorrect() ? CorrectIcon : InCorrectIcon
@@ -82,8 +90,11 @@ class QuestionCard extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        selectedAnswerIndex: state.selected_answer
+        selectedAnswerIndex: state.selected_answer,
+        currentTime: state.current_time
     }
 }
 
-export default connect(mapStateToProps)(QuestionCard);
+export default connect(mapStateToProps, {
+    endQuiz
+})(QuestionCard);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { LoginForm, WelcomeCard, Questions, ResultsCard } from './Components'
+import MainPage from './Pages/MainPage';
 import { HeaderLogo } from './assets'
 import { Provider } from "react-redux";
 import { store } from "./store";
@@ -10,12 +10,7 @@ function App() {
     <Provider store={store}>
       <div className="container">
         <img className="header" src={HeaderLogo}/>
-        <div className="main">
-          {/* <LoginForm/> */}
-          {/* <WelcomeCard/> */}
-          {/* <Questions /> */}
-          <ResultsCard/>
-        </div>
+        <MainPage/>
       </div>
     </Provider>
   );

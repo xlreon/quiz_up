@@ -1,7 +1,7 @@
 import React from 'react';
-import { PieChart, Pie, Sector, Cell } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 
-const COLORS = ["red","green"];
+const COLORS = ["green","red"];
 
 class ResultPieChart extends React.Component {
     render () {

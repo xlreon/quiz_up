@@ -4,7 +4,7 @@
     background-image:  linear-gradient(to right bottom, rgba(37, 65, 68, 0.8), rgba(46, 79, 104, 0.8)), url('https://pixelz.cc/wp-content/uploads/2017/11/rainbow-color-palette-background-uhd-4k-wallpaper.jpg');
     background-size: cover;
     width: 98vw;
-    height: minmax(98vh, max-content);
+    height: 95vh;
     padding: 3rem;
     box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -17,12 +17,14 @@
 .header {
     font-size: 4rem;
     text-align: center;
-    background:rgba(white,0.3);
-    font-weight: 600;
+    background-image:  linear-gradient(to right bottom, rgba(33, 33, 33, 0.1), rgba(29, 29, 29, 0.1)), url('https://i2.nicepik.com/files/861/985/102/light-colors-shading-pattern.jpg');
+    background-size: cover;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(208, 208, 208, 0.2);
+    z-index: 1;
     width: 13vw;
+    padding: 1rem;
     justify-self: center;
     border-radius: 100%;
-    border: solid black;
 }
 
 
