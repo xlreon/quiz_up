@@ -28,6 +28,12 @@
         width: 100%;
     }
 
+    &-list {
+        padding: 4rem;
+        border-radius: 3%;
+        background-image:  linear-gradient(to right bottom, rgba(255, 170, 170, 0.3), rgba(249, 245, 245, 0.3));
+    }
+
     &-current {
         font-size: 3rem;
     }

@@ -1,13 +1,14 @@
 import React from 'react';
 import './ResultsCard.scss';
 import ResultPieChart from './ResultPieChart';
+import AnswerList from './AnswerList';
 import { connect } from 'react-redux';
 
 class ResultsCard extends React.Component {
 
     findCorrectAndWrongAnswers = () => {
         const { selectedAnswers, questions } = this.props;
-        if(selectedAnswers && questions) {
+        if(selectedAnswers.length !== 0 && questions) {
             let correctAnswers = 0
             selectedAnswers.map((answer, index) => {
                 if(answer === questions[index].correct_answer) {
@@ -28,7 +29,6 @@ class ResultsCard extends React.Component {
         }
 
     }
-
     
     render() {
         const { correctAnswers, inCorrectAnswers } = this.findCorrectAndWrongAnswers()
@@ -49,9 +49,7 @@ class ResultsCard extends React.Component {
                     <ResultPieChart data={data}/>
                 </div>
                 <span className="result-container-title">Answers</span>
-                <div className='result-container-answers'>
-
-                </div>
+                <AnswerList questions={this.props.questions}/>
             </div>
         );
     }
@@ -60,7 +58,7 @@ class ResultsCard extends React.Component {
 const mapStateToProps = state => {
     return {
         selectedAnswers: state.selected_answers,
-        questions: state.questions
+        questions: state.question_and_answers
     }
 }
 

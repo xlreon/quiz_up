@@ -5,7 +5,7 @@
     grid-gap: 2rem;
     height: max-content;
     width: max-content;
-    padding: 3.5rem;
+    padding: 7rem;
     box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
     background-image:  linear-gradient(to right bottom, rgba(16, 16, 16, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.fineartamerica.com/images-medium-large-5/abstract-metal-background-carbon-fiber-texture-bgblue.jpg');
     background-size: cover;
@@ -21,5 +21,11 @@
         justify-content: center;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
+    }
+
+    &-answers {
+        height: max-content;
+        display: grid;
+        grid-gap: 6rem;
     }
 }
